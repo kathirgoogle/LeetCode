@@ -16,6 +16,7 @@ public class Wordprefix {
 		String temp = "at";
 		String words1[] = new String[5];
 		prefix = "^["+ temp +"].*";
+		String str = String.join(" ", words);
 		String words2 = Arrays.toString(words);
 		System.out.println(words2);
 		while(i != len ) {
