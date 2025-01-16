@@ -17,20 +17,10 @@ public class Wordprefix {
 		String words1[] = new String[5];
 		prefix = "^["+ temp +"].*";
 		String str = String.join(" ", words);
-		String words2 = Arrays.toString(words);
+		 	 
+		String words2 = str.split(prefix);
 		System.out.println(words2);
-		while(i != len ) {
-		Pattern p = Pattern.compile(prefix);
-		Matcher M = p.matcher(words1[i]);
-		
-		if( M.matches())
-		{
-		 words1[j] = words[i];
-		 System.out.println(words1[j]);
-		 cnt++;
-		}
-		j++;i++;
-		}
+		cnt = words2.length();
 		
 		return cnt;
 	}
