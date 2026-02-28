@@ -1,0 +1,37 @@
+package arrays;
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class Min_Sum_partition {
+	
+	public static void main(String[] args) {
+	// TODO Auto-generated method stub
+		int nums[] = new int []{3,5,9,7,12};
+		
+		Integer[] wrappers = Arrays.stream(nums).boxed()
+				.toArray(Integer[]::new);
+		//List<Integer> lst1 = Arrays.stream(nums).collect( );
+				
+		List<Integer> list = Arrays.stream(wrappers)
+				.collect(Collectors.toList());		
+		Optional [] min = new Optional[3];
+		
+		int total = 0;
+		int val = list.get(0);
+		total = total + val;
+		list.remove(0);
+		// int pos_min = list.indexOf();
+		for(int j=0;j < 2;j++)
+		{
+			min[j] = list.stream().min(Comparator.naturalOrder());
+			int min1 = (int)min[j].get();
+			val = min1;
+			total = total + val;
+			list.remove( new Integer(val));
+			System.out.println( val );
+		}
+		System.out.println(" Total " + total); 
+		
+	}
+;;
+}
